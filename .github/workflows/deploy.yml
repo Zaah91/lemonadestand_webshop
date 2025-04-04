@@ -25,7 +25,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: lemonadeStand-webshop/  # Ensure the correct path to the build directory
+          path: .next  # Ensure the correct path to the build directory
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
