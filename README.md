@@ -1,0 +1,2 @@
+# lemonadestand-webshop
+Nextjs project
