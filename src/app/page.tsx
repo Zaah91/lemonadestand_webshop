@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function HomePage() {
 
   return (
@@ -7,7 +9,8 @@ export default function HomePage() {
       <header className="text-center mb-8">
         <h1 className="text-4xl font-bold">Welcome to the Lemonade Stand!</h1>
         <p className="text-lg mt-2">Fresh and delicious lemonade for every taste.</p>
-        <img className="mx-auto block w-1/4" src="duck.webp" alt="duck" />
+        <Image className="mx-auto block w-1/4" src="/duck.webp" alt="duck" width={200} height={200} />
+        
       </header>
     </div>
   );
