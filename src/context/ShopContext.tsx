@@ -14,7 +14,7 @@ type ShopContextType = {
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 export const ShopProvider = ({ children }: { children: ReactNode }) => {
-  const [profit, setProfit] = useState(0);
+  const [profit] = useState(0);
   const [cart, setCart] = useState<Product[]>([]);
 
   const addToCart = (product: Product) => setCart((prev) => [...prev, product]);
