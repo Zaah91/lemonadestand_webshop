@@ -1,31 +1,31 @@
-name: Deploy Lemonadestand Project
+name: Deploy to Vercel
 
 on:
   push:
     branches:
-      - main  # Use main branch instead of gh-pages
+      - main  # Change this if your default branch is different (like 'master')
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Dependencies
-        run: npm install || echo "No dependencies to install"
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22  # Match your local Node.js version
+          cache: 'npm'
 
-      - name: Build Project
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js app
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: lemonadeStand-webshop  # Use the correct path to the build directory
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.lemonadestand }}  # Add this secret in GitHub repo settings
+        run: npx vercel --prod --token $VERCEL_TOKEN
