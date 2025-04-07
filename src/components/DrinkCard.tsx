@@ -9,6 +9,8 @@ interface Drink {
   strDrinkThumb: string;
 }
 
+const price = 10; // Set a default price for the drinks
+
 export default function DrinkCard({ drink }: { drink: Drink }) {
   const { addToCart } = useShop();
 
@@ -25,9 +27,9 @@ export default function DrinkCard({ drink }: { drink: Drink }) {
       />
       <button
         className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
-        onClick={() => addToCart({ id: drink.idDrink, name: drink.strDrink, price: 10 })}
+        onClick={() => addToCart({ id: drink.idDrink, name: drink.strDrink, price: price })} // Add item to cart
       >
-        Add to Cart ($10)
+        Add to Cart ($ {price})
       </button>
     </div>
   );

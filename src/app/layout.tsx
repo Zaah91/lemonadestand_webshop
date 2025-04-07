@@ -14,3 +14,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+// Root layout for the application
+// This layout wraps the entire application with a provider for the shop context

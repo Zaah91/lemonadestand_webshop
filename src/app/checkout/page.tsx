@@ -9,7 +9,7 @@ export default function CheckoutPage() {
     <div>
       <div className="p-4">
         <h2 className="text-2xl font-bold mb-4">Checkout</h2>
-        {cart.length === 0 ? (
+        {cart.length === 0 ? ( // Check if cart array is empty
           <p>Your cart is empty.</p>
         ) : (
           <>
@@ -18,7 +18,7 @@ export default function CheckoutPage() {
                 <li key={idx} className="border p-2 rounded flex justify-between items-center">
                   <span>{item.name} - ${item.price}</span>
                   <button
-                    onClick={() => removeFromCart(idx)} // Call removeFromCart with index
+                    onClick={() => removeFromCart(idx)} // Remove item from cart
                     className="bg-red-500 text-white px-2 py-1 rounded"
                   >
                     Delete

@@ -1,4 +1,4 @@
-import DrinkCard from './DrinkCard';
+import DrinkCard from '@/components/DrinkCard';
 
 // Define the type for the drinks
 interface Drink {
