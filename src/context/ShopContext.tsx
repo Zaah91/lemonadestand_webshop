@@ -37,6 +37,5 @@ export const useShop = () => {
 };
 
 
-
 // Custom hook to use the ShopContext
 // This hook allows components to access the ShopContext
