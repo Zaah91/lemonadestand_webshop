@@ -9,7 +9,7 @@ interface Drink {
   strDrinkThumb: string;
 }
 
-const price = 10; // Set a default price for the drinks
+const price = 10; // default price
 
 export default function DrinkCard({ drink }: { drink: Drink }) {
   const { addToCart } = useShop();
@@ -20,7 +20,6 @@ export default function DrinkCard({ drink }: { drink: Drink }) {
       <Image
         src= {`${drink.strDrinkThumb}/small`} // small image size from the API
         alt={drink.strDrink}
-        layout="responsive"
         width={200}
         height={200}
         className="w-full h-48 object-cover rounded-md mb-4"
