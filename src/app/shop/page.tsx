@@ -11,7 +11,7 @@ export default async function ShopPage() {
           <h1 className="text-4xl font-bold">Lemonade's with and without alcohol</h1>
         </header>
          
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {drinks.map((drink) => (
             <DrinkCard key={drink.idDrink} drink={drink} />
           ))}
